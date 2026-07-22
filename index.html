@@ -28,6 +28,7 @@
   header.h p{max-width:64ch;color:var(--ink-soft);font-size:1.06rem;margin:16px 0 0}
   .grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:34px 0 10px}
   .card{background:var(--raised);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+  .card.wide{grid-column:1/-1}
   video{width:100%;display:block;background:#000;aspect-ratio:16/9}
   .meta{padding:16px 18px}
   .meta .t{font-family:var(--fd);font-size:1.2rem;font-weight:600}
@@ -44,14 +45,15 @@
 <div class="wrap">
   <header class="h">
     <div class="eyebrow">Sample commercials</div>
-    <h1>Four spots we'd run for your practices.</h1>
-    <p>Each is a real 18-second TV spot: photoreal footage, a voiceover, licensed-style music, a compliant on-screen disclaimer, and a closeout card. Every one ends on "Firm Media · your brand goes here" so you can see the white-label swap. Produced start to finish by Bowen, under your name.</p>
+    <h1>Five spots, two styles, for your practices.</h1>
+    <p>Four cinematic hero spots plus one kinetic type cut with no cast on screen. Each is a real 18-second TV spot: a voiceover, licensed-style music, a compliant on-screen disclaimer, and a closeout card. Every one ends on "Firm Media · your brand goes here" so you can see the white-label swap. Produced start to finish by Bowen, under your name.</p>
   </header>
   <div class="grid">
     <div class="card"><video controls preload="metadata" src="medspa.mp4"></video><div class="meta"><div class="t">Med Spa · Glow Event</div><div class="o">$50 off first visit + complimentary consult</div><div class="v">Cinematic hero</div></div></div>
     <div class="card"><video controls preload="metadata" src="plastic.mp4"></video><div class="meta"><div class="t">Plastic Surgery · Aria</div><div class="o">Free consultation with a board-certified surgeon</div><div class="v">Cinematic hero</div></div></div>
     <div class="card"><video controls preload="metadata" src="dental.mp4"></video><div class="meta"><div class="t">Cosmetic Dentistry · Cascade</div><div class="o">$59 new-patient exam + X-rays</div><div class="v">Cinematic hero</div></div></div>
     <div class="card"><video controls preload="metadata" src="oral.mp4"></video><div class="meta"><div class="t">Oral Surgery · Summit</div><div class="o">Free implant consult + complimentary 3D scan</div><div class="v">Cinematic hero</div></div></div>
+    <div class="card wide"><video controls preload="metadata" src="kinetic.mp4"></video><div class="meta"><div class="t">Med Spa · Glow Event — kinetic cut</div><div class="o">A different style: bold motion type, no cast on screen. Same offer, produced for a fraction of the lift.</div><div class="v">Kinetic type · no people</div></div></div>
   </div>
   <div class="note"><span class="b">Compliant by build</span><span>No guaranteed outcomes, no fabricated before-and-afters, no invented testimonials. Offers, prices, and ratings shown are sample/demonstration values; live spots carry only the practice's real, honored offers and verified ratings.</span></div>
 </div>
