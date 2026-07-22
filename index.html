@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <title>Firm Media · White-Label Portal</title>
 <style>
   :root{
@@ -27,18 +28,30 @@
   .status{display:inline-flex;align-items:center;gap:8px;font-size:.74rem;font-weight:650;color:var(--good);background:rgba(95,191,146,.1);border:1px solid rgba(95,191,146,.22);padding:6px 13px;border-radius:999px}
   .status .d{width:7px;height:7px;border-radius:50%;background:var(--good);box-shadow:0 0 0 3px rgba(95,191,146,.18)}
 
-  section{padding:46px 0;border-top:1px solid var(--line)}
-  section:first-of-type{border-top:none;padding-top:44px}
-  .eyebrow{font-size:.71rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:15px;display:flex;align-items:center;gap:11px}
+  section{padding:42px 0;border-top:1px solid var(--line)}
+  section:first-of-type{border-top:none;padding-top:40px}
+  .eyebrow{font-size:.71rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:11px}
   .eyebrow::before{content:"";width:24px;height:1.5px;background:var(--accent);opacity:.7}
-  h2{font-size:clamp(1.5rem,3.2vw,2.15rem)}
-  .lead{color:var(--ink-soft);max-width:66ch;margin:14px 0 0;font-size:1.05rem}
+  h2{font-size:clamp(1.45rem,3vw,2rem)}
+  .lead{color:var(--ink-soft);max-width:66ch;margin:12px 0 0;font-size:1.02rem}
 
-  .ov{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px}
-  .ov .row{display:flex;gap:15px;background:var(--raised);border:1px solid var(--line);border-radius:15px;padding:20px;box-shadow:var(--shadow)}
-  .ov .n{font-family:var(--fd);font-size:1.35rem;color:var(--brand);font-weight:600;flex:none;width:26px;line-height:1}
-  .ov h3{font-size:1.02rem;font-family:var(--fs);font-weight:650;margin-bottom:6px}
-  .ov p{font-size:.9rem;color:var(--ink-soft);margin:0}
+  /* just shipped */
+  .ship{display:grid;grid-template-columns:1.55fr 1fr;gap:20px;align-items:start}
+  .ship video{width:100%;display:block;background:#000;aspect-ratio:16/9;border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow)}
+  .ship .side{background:var(--raised);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+  .ship .side h3{font-size:1.2rem;margin-bottom:3px}
+  .ship .side .o{color:var(--ink-soft);font-size:.9rem;margin-bottom:16px}
+  .spec{display:flex;justify-content:space-between;gap:10px;font-size:.86rem;padding:9px 0;border-top:1px solid var(--line)}
+  .spec span:first-child{color:var(--ink-soft)}
+  .spec span:last-child{font-weight:600;text-align:right}
+  .badge{display:inline-block;margin-top:16px;font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--good);background:rgba(95,191,146,.12);padding:5px 11px;border-radius:6px}
+
+  /* metrics */
+  .metrics{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:8px}
+  .kpi{background:var(--raised);border:1px solid var(--line);border-radius:13px;padding:17px;box-shadow:var(--shadow)}
+  .kpi .l{font-size:.66rem;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-soft);font-weight:650}
+  .kpi .v{font-family:var(--fd);font-size:1.75rem;font-weight:600;margin-top:9px}
+  .kpi .d{font-size:.72rem;color:var(--accent);font-weight:600;margin-top:3px}
 
   /* tabs */
   .tabs{display:flex;gap:8px;margin-top:6px;border-bottom:1px solid var(--line);flex-wrap:wrap}
@@ -47,45 +60,42 @@
   .tab:hover{color:var(--ink)}
   .tab.active{color:var(--ink);border-bottom-color:var(--accent)}
   .tab.active .c{color:var(--accent);border-color:rgba(212,172,99,.35)}
-  .panel{display:none;padding-top:30px}
+  .panel{display:none;padding-top:28px}
   .panel.show{display:block}
-  .wk{font-size:.75rem;color:var(--accent);font-weight:700;letter-spacing:.04em;margin-bottom:10px}
-  .exp{color:var(--ink-soft);max-width:70ch;margin:0 0 24px;font-size:1rem}
+  .exp{color:var(--ink-soft);max-width:70ch;margin:0 0 22px;font-size:.98rem}
 
   .tag{font-size:.64rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);background:rgba(212,172,99,.11);border:1px solid rgba(212,172,99,.22);padding:5px 10px;border-radius:6px}
   .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px}
   .card{background:var(--raised);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
   .card.wide{grid-column:1/-1}
-  video{width:100%;display:block;background:#000;aspect-ratio:16/9}
-  .meta{padding:16px 18px}
-  .meta .t{font-family:var(--fd);font-size:1.16rem;font-weight:600}
-  .meta .o{color:var(--ink-soft);font-size:.9rem;margin-top:5px}
-  .meta .v{font-size:.68rem;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.09em;margin-top:9px}
+  video{max-width:100%}
+  .card video{width:100%;display:block;background:#000;aspect-ratio:16/9}
+  .meta{padding:15px 17px}
+  .meta .t{font-family:var(--fd);font-size:1.14rem;font-weight:600}
+  .meta .o{color:var(--ink-soft);font-size:.88rem;margin-top:5px}
+  .meta .v{font-size:.66rem;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.09em;margin-top:9px}
 
-  /* social vertical */
-  .social{display:grid;grid-template-columns:340px 1fr;gap:26px;align-items:start}
+  .social{display:grid;grid-template-columns:320px 1fr;gap:24px;align-items:start}
   .vcard{background:var(--raised);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
-  .vcard video{aspect-ratio:9/16}
-  .vcard .meta{padding:15px 17px}
+  .vcard video{width:100%;display:block;background:#000;aspect-ratio:9/16}
   .spts{display:flex;flex-direction:column;gap:12px}
   .sfeat{display:flex;gap:13px;background:var(--sunken);border:1px solid var(--line);border-radius:13px;padding:16px}
   .sfeat .k{flex:none;width:28px;height:28px;border-radius:8px;background:rgba(95,187,168,.12);color:var(--brand);display:flex;align-items:center;justify-content:center;font-weight:700}
   .sfeat h4{font-family:var(--fs);font-size:.95rem;font-weight:650;margin:0 0 3px}
-  .sfeat p{margin:0;font-size:.86rem;color:var(--ink-soft)}
+  .sfeat p{margin:0;font-size:.85rem;color:var(--ink-soft)}
 
-  /* email */
   .flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch;gap:12px;margin-top:6px}
   .fstep{background:var(--raised);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow)}
   .fstep .n{font-family:var(--fd);font-size:1.3rem;color:var(--brand);font-weight:600}
   .fstep h3{font-family:var(--fs);font-size:1rem;font-weight:650;margin:8px 0 5px}
-  .fstep p{font-size:.86rem;color:var(--ink-soft);margin:0}
+  .fstep p{font-size:.85rem;color:var(--ink-soft);margin:0}
   .farrow{align-self:center;color:var(--line-2);font-size:1.6rem}
   .plan{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
   .pitem{display:flex;gap:14px;background:var(--sunken);border:1px solid var(--line);border-radius:13px;padding:17px}
   .pitem .k{flex:none;width:30px;height:30px;border-radius:8px;background:rgba(95,187,168,.12);color:var(--brand);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem}
   .pitem h4{margin:0 0 4px;font-size:.95rem;font-family:var(--fs);font-weight:650}
   .pitem .when{font-size:.7rem;color:var(--accent);font-weight:650;text-transform:uppercase;letter-spacing:.06em}
-  .pitem p{margin:6px 0 0;font-size:.85rem;color:var(--ink-soft)}
+  .pitem p{margin:6px 0 0;font-size:.84rem;color:var(--ink-soft)}
   .mails{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
   .mailwrap .lbl{font-size:.72rem;color:var(--ink-soft);margin-bottom:9px;font-weight:600}
   .mailwrap .lbl b{color:var(--accent);font-weight:700}
@@ -100,29 +110,58 @@
   .mail-foot{padding:12px 18px;border-top:1px solid #eae7df;font-size:.68rem;color:#8a8a82}
   .note{margin-top:22px;font-size:.85rem;color:var(--ink-soft);display:flex;gap:11px;align-items:flex-start;max-width:78ch}
   .note .b{flex:none;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);border:1px solid rgba(95,187,168,.3);padding:4px 8px;border-radius:6px;margin-top:1px}
+
+  .cal{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:8px}
+  .day{background:var(--raised);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
+  .day .dow{font-size:.68rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--brand)}
+  .day .dt{font-size:.7rem;color:var(--ink-faint);margin-top:2px}
+  .day h4{font-family:var(--fs);font-size:.93rem;font-weight:650;margin:12px 0 6px}
+  .day p{font-size:.82rem;color:var(--ink-soft);margin:0}
+  .day .pill{display:inline-block;margin-top:11px;font-size:.64rem;font-weight:650;padding:3px 9px;border-radius:999px}
+  .pill.done{color:var(--good);background:rgba(95,191,146,.12)}
+  .pill.next{color:var(--accent);background:rgba(212,172,99,.12)}
+
   footer{padding:30px 0 50px;color:var(--ink-faint);font-size:.78rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
-  @media (max-width:860px){.ov,.plan,.mails{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.farrow{transform:rotate(90deg)}.grid{grid-template-columns:1fr}.social{grid-template-columns:1fr;max-width:360px}}
+  @media (max-width:860px){.ship,.social{grid-template-columns:1fr}.metrics,.cal{grid-template-columns:1fr 1fr}.plan,.mails{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.farrow{transform:rotate(90deg)}.grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="bar"><div class="bar-in">
   <div class="mark"><span class="dot"></span> Firm Media <small>white-label portal · powered by Bowen</small></div>
-  <span class="status"><span class="d"></span> Onboarding · samples ready</span>
+  <span class="status"><span class="d"></span> Active · Week of July 27</span>
 </div></div>
 
 <div class="wrap">
   <section>
-    <div class="eyebrow">Overview · what we'll do</div>
-    <h2>Your commercials, reviews, and repeat business, under Firm Media's name.</h2>
-    <p class="lead">We produce the work and stay invisible. You keep the client, the brand, and the margin. Every week you get a fresh drop across three channels, spots, social, and email, built for your specialties: plastic surgery, oral surgery, med spa, dermatology, and cosmetic dentistry.</p>
-    <div class="ov">
-      <div class="row"><div class="n">1</div><div><h3>Spots, social, and email, every week</h3><p>A locked format cloned per practice. The offer, brand, and footage swap; the format stays. Twelve spots a month, plus social cuts and the email engine.</p></div></div>
-      <div class="row"><div class="n">2</div><div><h3>Under your name, your margin</h3><p>Twelve spots at $4,500, the review engine at $1,500, all white-label. Exclusive rates across multiple practices.</p></div></div>
+    <div class="eyebrow">Just shipped</div>
+    <div class="ship">
+      <video controls preload="metadata" src="https://tbow314.github.io/firm-media-samples/medspa-v4.mp4"></video>
+      <div class="side">
+        <h3>Med Spa · Glow Event</h3>
+        <div class="o">$50 off first visit + complimentary consult</div>
+        <div class="spec"><span>Format</span><span>Cinematic + real B-roll</span></div>
+        <div class="spec"><span>Length</span><span>18 seconds</span></div>
+        <div class="spec"><span>Aspects</span><span>16:9 · 9:16 · 4:5</span></div>
+        <div class="spec"><span>Audio</span><span>Voiceover + music</span></div>
+        <div class="spec"><span>Closeout</span><span>Firm Media, swappable</span></div>
+        <span class="badge">Delivered · white-label</span>
+      </div>
     </div>
   </section>
 
   <section>
-    <div class="eyebrow">This week's drop · Week of July 27</div>
+    <div class="eyebrow">This week · Week of July 27</div>
+    <div class="metrics">
+      <div class="kpi"><div class="l">Spots</div><div class="v">5</div><div class="d">4 cinematic + 1 kinetic</div></div>
+      <div class="kpi"><div class="l">Social cuts</div><div class="v">1</div><div class="d">vertical UGC</div></div>
+      <div class="kpi"><div class="l">Email sends</div><div class="v">4</div><div class="d">into their CRM</div></div>
+      <div class="kpi"><div class="l">Aspect ratios</div><div class="v">3</div><div class="d">TV, feed, vertical</div></div>
+      <div class="kpi"><div class="l">Turnaround</div><div class="v">48h</div><div class="d">concept to delivery</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">This week's assets</div>
     <div class="tabs">
       <button class="tab active" onclick="showTab('spots',this)">Spots <span class="c">5</span></button>
       <button class="tab" onclick="showTab('social',this)">Social <span class="c">1</span></button>
@@ -130,8 +169,7 @@
     </div>
 
     <div class="panel show" id="spots">
-      <div class="wk">Week of July 27 · commercials</div>
-      <p class="exp"><strong>What this is:</strong> the TV and connected-TV lane. Four cinematic hero cuts across your verticals plus one kinetic type cut with no cast on screen. Each is a real 18-second spot with a voiceover, music, a compliant on-screen disclaimer, and a "Firm Media · your brand goes here" closeout. This is what runs on TV, YouTube pre-roll, and the practice website. <span class="tag">Sample</span></p>
+      <p class="exp"><strong>The TV and connected-TV lane.</strong> Four cinematic hero cuts across your verticals plus one kinetic type cut with no cast on screen. Real 18-second spots, voiceover, music, compliant disclaimer, and a "Firm Media · your brand goes here" closeout. Runs on TV, YouTube pre-roll, and the practice website. <span class="tag">Sample</span></p>
       <div class="grid">
         <div class="card"><video controls preload="metadata" src="https://tbow314.github.io/firm-media-samples/medspa-v4.mp4"></video><div class="meta"><div class="t">Med Spa · Glow Event</div><div class="o">$50 off first visit + complimentary consult</div><div class="v">Cinematic + real B-roll</div></div></div>
         <div class="card"><video controls preload="metadata" src="https://tbow314.github.io/firm-media-samples/plastic.mp4"></video><div class="meta"><div class="t">Plastic Surgery · Aria</div><div class="o">Free consultation, board-certified</div><div class="v">Cinematic hero</div></div></div>
@@ -142,13 +180,12 @@
     </div>
 
     <div class="panel" id="social">
-      <div class="wk">Week of July 27 · social</div>
-      <p class="exp"><strong>What this is:</strong> the paid-social lane, built vertical for Reels, TikTok, and Meta feed. UGC-style, authentic, and caption-forward so it reads like a recommendation, not an ad. This is where med spa and aesthetics convert cheapest. Compliant by build: a spokesperson presenter, never a fabricated patient testimonial. <span class="tag">Sample</span></p>
+      <p class="exp"><strong>The paid-social lane,</strong> built vertical for Reels, TikTok, and Meta feed. Voiceover over the presenter with bold captions, so it reads like a recommendation, not an ad. Where med spa and aesthetics convert cheapest. Compliant by build: a spokesperson, never a fabricated patient testimonial. <span class="tag">Sample</span></p>
       <div class="social">
-        <div class="vcard"><video controls preload="metadata" src="https://tbow314.github.io/firm-media-samples/ugc.mp4"></video><div class="meta"><div class="t">Med Spa · Glow Event</div><div class="o">UGC / social cut · 9:16</div></div></div>
+        <div class="vcard"><video controls preload="metadata" src="https://tbow314.github.io/firm-media-samples/ugc-v2.mp4"></video><div class="meta"><div class="t">Med Spa · Glow Event</div><div class="o">UGC / social cut · 9:16</div></div></div>
         <div class="spts">
           <div class="sfeat"><div class="k">1</div><div><h4>Vertical, native to the feed</h4><p>9:16 with bold captions, made to stop the thumb on Reels and TikTok.</p></div></div>
-          <div class="sfeat"><div class="k">2</div><div><h4>Feels organic</h4><p>A relatable on-camera read, not a polished TV spot, so it earns attention on social.</p></div></div>
+          <div class="sfeat"><div class="k">2</div><div><h4>Feels organic</h4><p>A relatable presenter with a voiceover, not a polished TV spot, so it earns attention on social.</p></div></div>
           <div class="sfeat"><div class="k">3</div><div><h4>Same closeout, your brand</h4><p>Ends on the "Firm Media · your brand goes here" card, swappable like every other cut.</p></div></div>
           <div class="sfeat"><div class="k">4</div><div><h4>Cheap to scale</h4><p>New presenter or new offer is a fast reshoot, so you can run several a week per practice.</p></div></div>
         </div>
@@ -156,23 +193,22 @@
     </div>
 
     <div class="panel" id="email">
-      <div class="wk">Week of July 27 · email</div>
-      <p class="exp"><strong>What this is:</strong> the emails send in the practice's brand and plug <strong>straight into their CRM or lead generator</strong> (HubSpot, GoHighLevel, Mailchimp, whatever they run). Two jobs. <strong>New deals:</strong> offers that pull old patients and cold lead lists back in to book. <strong>Reviews:</strong> fresh Google reviews from recent patients. Every reply, booking, and review flows back into their system, no new tool to learn.</p>
+      <p class="exp"><strong>The emails send in the practice's brand and plug straight into their CRM or lead generator</strong> (HubSpot, GoHighLevel, Mailchimp, whatever they run). Two jobs. <strong>New deals:</strong> offers that pull old patients and cold lead lists back in to book. <strong>Reviews:</strong> fresh Google reviews from recent patients. Every reply, booking, and review flows back into their system, no new tool to learn.</p>
       <div class="flow">
         <div class="fstep"><div class="n">1</div><h3>Designed in their brand</h3><p>Logo, colors, and voice matched to the practice, so it reads as their own.</p></div>
         <div class="farrow" aria-hidden="true">&rarr;</div>
-        <div class="fstep"><div class="n">2</div><h3>Sent from their CRM</h3><p>Delivered on the practice's domain and system, not ours.</p></div>
+        <div class="fstep"><div class="n">2</div><h3>Into their CRM</h3><p>Delivered on the practice's domain and system, not ours.</p></div>
         <div class="farrow" aria-hidden="true">&rarr;</div>
-        <div class="fstep"><div class="n">3</div><h3>Reviews + repeat visits</h3><p>Happy patients leave Google reviews; lapsed ones rebook off a timely offer.</p></div>
+        <div class="fstep"><div class="n">3</div><h3>Deals + reviews</h3><p>Lapsed patients rebook; happy ones leave Google reviews.</p></div>
       </div>
-      <div class="eyebrow" style="margin-top:34px">The plan · what sends, and when</div>
+      <div class="eyebrow" style="margin-top:32px">The plan · what sends, and when</div>
       <div class="plan">
         <div class="pitem"><div class="k">A</div><div><div class="when">On booking</div><h4>New-patient welcome</h4><p>Sets expectations and builds trust before the first visit.</p></div></div>
         <div class="pitem"><div class="k">B</div><div><div class="when">1 to 2 days after a visit</div><h4>Review request</h4><p>Invites a Google review; anything short of great reaches the front desk privately.</p></div></div>
         <div class="pitem"><div class="k">C</div><div><div class="when">Lapsed 9 to 12 months</div><h4>Reactivation / win-back</h4><p>A warm reason to come back in, no treatment or condition ever named.</p></div></div>
         <div class="pitem"><div class="k">D</div><div><div class="when">Monthly</div><h4>Flash promo</h4><p>This month's offer to the active list, one send plus a 48-hour reminder to non-openers.</p></div></div>
       </div>
-      <div class="eyebrow" style="margin-top:34px">The emails · sample sends</div>
+      <div class="eyebrow" style="margin-top:32px">The emails · sample sends</div>
       <div class="mails">
         <div class="mailwrap">
           <div class="lbl"><b>B ·</b> Review request, 1 to 2 days after a visit</div>
@@ -184,6 +220,17 @@
         </div>
       </div>
       <div class="note"><span class="b">Built-in</span><span>Every send is PHI-clean, carries an unsubscribe, and follows Google's and the FTC's review rules. No treatment or condition is ever named, and honest reviews are never gated out.</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Production calendar · Week of July 27</div>
+    <div class="cal">
+      <div class="day"><div class="dow">Mon</div><div class="dt">Jul 27</div><h4>Concepts + copy</h4><p>Next spots drafted from each practice's live offers.</p><span class="pill done">Delivered</span></div>
+      <div class="day"><div class="dow">Tue</div><div class="dt">Jul 28</div><h4>Production</h4><p>Spots rendered and captioned in every aspect ratio.</p><span class="pill done">Delivered</span></div>
+      <div class="day"><div class="dow">Wed</div><div class="dt">Jul 29</div><h4>Review requests</h4><p>Post-visit review emails go to each practice's patients.</p><span class="pill next">Scheduled</span></div>
+      <div class="day"><div class="dow">Thu</div><div class="dt">Jul 30</div><h4>Reactivation</h4><p>This week's offer reaches lapsed patients and lead lists.</p><span class="pill next">Scheduled</span></div>
+      <div class="day"><div class="dow">Fri</div><div class="dt">Jul 31</div><h4>Report + sign-off</h4><p>Portal updates; next week's plan to you for a nod.</p><span class="pill next">Scheduled</span></div>
     </div>
   </section>
 </div>
