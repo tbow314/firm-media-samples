@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Firm Media — Sample Commercials</title>
+<style>
+  :root{
+    --paper:#F6F7F5; --raised:#FFFFFF; --ink:#121A17; --ink-soft:#465049;
+    --brand:#0E4D45; --brand-2:#4C7A6E; --accent:#B4863A; --accent-soft:#F0E3C9;
+    --line:#E3E5DF; --shadow:0 1px 2px rgba(18,26,23,.05),0 8px 26px rgba(18,26,23,.07);
+    --fd:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    --fs:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,Roboto,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){:root{--paper:#0E1412;--raised:#151D1A;--ink:#EAEDE9;--ink-soft:#9DA8A1;--brand:#57B3A2;--brand-2:#7FBFB1;--accent:#D2AC63;--accent-soft:#33301F;--line:#24302C;--shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.34)}}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--fs);line-height:1.55}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .bar{border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--brand) 4%,var(--paper))}
+  .bar-in{display:flex;justify-content:space-between;align-items:center;padding:18px 24px;max-width:1080px;margin:0 auto;flex-wrap:wrap;gap:8px}
+  .mark{display:flex;align-items:center;gap:9px;font-weight:700}
+  .mark .dot{width:10px;height:10px;border-radius:3px;background:linear-gradient(135deg,var(--brand),var(--brand-2))}
+  .conf{color:var(--ink-soft);text-transform:uppercase;letter-spacing:.13em;font-size:.68rem;font-weight:600}
+  header.h{padding:40px 0 8px}
+  .eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--brand-2);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+  .eyebrow::before{content:"";width:22px;height:1.5px;background:var(--brand-2)}
+  h1{font-family:var(--fd);font-weight:600;font-size:clamp(1.9rem,4vw,2.7rem);margin:0;line-height:1.14;text-wrap:balance}
+  header.h p{max-width:64ch;color:var(--ink-soft);font-size:1.06rem;margin:16px 0 0}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:34px 0 10px}
+  .card{background:var(--raised);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+  video{width:100%;display:block;background:#000;aspect-ratio:16/9}
+  .meta{padding:16px 18px}
+  .meta .t{font-family:var(--fd);font-size:1.2rem;font-weight:600}
+  .meta .o{color:var(--ink-soft);font-size:.9rem;margin-top:4px}
+  .meta .v{font-size:.74rem;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-top:8px}
+  .note{margin:20px 0 0;font-size:.86rem;color:var(--ink-soft);display:flex;gap:10px;align-items:flex-start;max-width:74ch}
+  .note .b{flex:none;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);border:1px solid color-mix(in srgb,var(--brand) 35%,var(--line));padding:4px 8px;border-radius:6px;margin-top:1px}
+  footer{padding:34px 0 48px;margin-top:24px;border-top:1px solid var(--line);color:var(--ink-soft);font-size:.78rem}
+  @media (max-width:760px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="bar"><div class="bar-in"><div class="mark"><span class="dot"></span> Bowen AI Strategy Group</div><div class="conf">Private · Sample spots for Firm Media</div></div></div>
+<div class="wrap">
+  <header class="h">
+    <div class="eyebrow">Sample commercials</div>
+    <h1>Four spots we'd run for your practices.</h1>
+    <p>Each is a real 18-second TV spot: photoreal footage, a voiceover, licensed-style music, a compliant on-screen disclaimer, and a closeout card. Every one ends on "Firm Media · your brand goes here" so you can see the white-label swap. Produced start to finish by Bowen, under your name.</p>
+  </header>
+  <div class="grid">
+    <div class="card"><video controls preload="metadata" src="medspa.mp4"></video><div class="meta"><div class="t">Med Spa · Glow Event</div><div class="o">$50 off first visit + complimentary consult</div><div class="v">Cinematic hero</div></div></div>
+    <div class="card"><video controls preload="metadata" src="plastic.mp4"></video><div class="meta"><div class="t">Plastic Surgery · Aria</div><div class="o">Free consultation with a board-certified surgeon</div><div class="v">Cinematic hero</div></div></div>
+    <div class="card"><video controls preload="metadata" src="dental.mp4"></video><div class="meta"><div class="t">Cosmetic Dentistry · Cascade</div><div class="o">$59 new-patient exam + X-rays</div><div class="v">Cinematic hero</div></div></div>
+    <div class="card"><video controls preload="metadata" src="oral.mp4"></video><div class="meta"><div class="t">Oral Surgery · Summit</div><div class="o">Free implant consult + complimentary 3D scan</div><div class="v">Cinematic hero</div></div></div>
+  </div>
+  <div class="note"><span class="b">Compliant by build</span><span>No guaranteed outcomes, no fabricated before-and-afters, no invented testimonials. Offers, prices, and ratings shown are sample/demonstration values; live spots carry only the practice's real, honored offers and verified ratings.</span></div>
+</div>
+<footer><div class="wrap">Prepared privately for Firm Media · Bowen AI Strategy Group · sample commercials for fictional demonstration practices</div></footer>
+</body>
+</html>
